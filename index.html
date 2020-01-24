@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Tuto js</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+	<h1>Tuto JS</h1>
+
+<script type="text/javascript">
+// Modilisation d'un chien
+class Animal {
+	constructor(nom, race, age, sexe){
+		this.nom = nom;
+		this.race = race;
+		this.age = age; 
+		this.sexe = sexe;
+	}
+
+	profil(){
+		return console.log(`${this.nom} est un.e ${this.sexe} de race ${this.race}, ${this.age} ans d'age `);
+	}
+
+
+	aboyer(){
+		if (this.age > 2) {
+			return console.log("Wouaf Wouaf Wouaf");
+		}
+		else{
+			return console.log(`${this.nom} est encore bébé chien`);
+		}
+	}
+
+}
+
+const gaby = new Animal("Gaby", "Chiwawa", 2, "male");
+console.log(gaby.profil());
+console.log(gaby.aboyer());
+
+//POO : Liste les comptes bancaires
+class ListeComptes{
+	constructor(titulaire, solde){
+		this.titulaire = titulaire;
+		this.solde = solde;
+	}
+
+	credit(){
+		let soldeTotal = 0;
+		if (this.solde > 0) {
+			soldeTotal += this.solde;
+			return soldeTotal;
+		}else{
+			return this.solde;
+		}
+	}
+
+	profil(){
+		let enCaisse = this.credit()
+
+		if (enCaisse >= 0) {
+			return console.log(`${this.titulaire}, votre solde est de : ${this.credit()}`);
+		}else{
+			return console.log(`${this.titulaire} vous êtes à découvert de : ${enCaisse}`);
+		}
+		
+	}
+}
+
+let listeComptes = new Array(), daris = new ListeComptes('Daris', -500), armand = new ListeComptes('Armand', 0);
+
+
+listeComptes.push(daris);
+listeComptes.push(armand);
+
+listeComptes.forEach(compte =>{
+	console.log(compte.profil());
+});
+
+//alert(foo + bar);
+</script>
+</body>
+</html>
