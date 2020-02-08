@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ajout d'un témoignage</title>
+</head>
+
+<body>
+    <h3>Manipulation du JSON : Ajout d'un témoignage</h3>
+    <div id="msg"></div>
+   	<form>
+   		<div>
+   			<label for="pseudo">Pseudo :</label>
+   			<input type="text" name="pseudo" id="pseudo">
+   		</div>
+      <div>
+        <p><label><input type="radio" name="evaluation" value="5">Génial</label></p>
+        <p><label><input type="radio" name="evaluation" value="4">Très bien</label></p>
+        <p><label><input type="radio" name="evaluation" value="3">Pas mal</label></p>
+        <p><label><input type="radio" name="evaluationevaluation" value="2">Bof</label></p>
+        <p><label><input type="radio" name="evaluation" value="1">Nul</label></p>
+      </div>
+   		<div>
+   			<label for="message">Ajoutez un message :</label><br><textarea name="message"></textarea>
+   		</div>
+   		<div>
+   			<input type="submit">
+   		</div>
+   	</form>
+    <script src="js/ajaxpostjson.js"></script>
+    <script src="js/temoignage.js"></script>
+</body>
+
+</html>
